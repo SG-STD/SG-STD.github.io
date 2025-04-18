@@ -11,6 +11,7 @@
       --accent: #7f5af0;
       --text: #e4e4e4;
       --muted: #aaa;
+      --link: #5cc4ff; /* Более "научный" голубой */
     }
 
     * {
@@ -34,6 +35,7 @@
     header h1 {
       font-size: 3em;
       color: var(--accent);
+      margin-bottom: 10px;
     }
 
     header p {
@@ -54,6 +56,7 @@
       margin-bottom: 20px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
       transition: transform 0.3s ease;
+      border-left: 5px solid var(--accent); /* Добавим акцентную полоску слева */
     }
 
     .card:hover {
@@ -63,12 +66,14 @@
     .card h2 {
       color: var(--accent);
       margin-bottom: 10px;
+      border-bottom: 2px solid var(--muted); /* Добавим тонкую линию под заголовком */
+      padding-bottom: 5px;
     }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Увеличим минимальную ширину карточки проекта */
+      gap: 25px; /* Увеличим отступ между проектами */
     }
 
     .project {
@@ -76,20 +81,28 @@
       border-radius: 12px;
       padding: 20px;
       text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15); /* Легкая тень для объема */
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .project:hover {
+      transform: translateY(-5px); /* Небольшое поднятие при наведении */
     }
 
     .project img {
-      max-width: 100px;
-      margin-bottom: 10px;
+      max-width: 80px; /* Немного уменьшим логотипы */
+      margin-bottom: 15px;
+      opacity: 0.8; /* Сделаем лого немного приглушенным */
     }
 
     .project h3 {
-      margin: 10px 0 5px;
+      margin: 10px 0 8px;
       color: var(--accent);
+      font-size: 1.1em;
     }
 
     .project p {
-      font-size: 0.95em;
+      font-size: 0.9em;
       color: var(--muted);
     }
 
@@ -98,15 +111,27 @@
       padding: 40px 20px 20px;
       font-size: 0.9em;
       color: var(--muted);
+      border-top: 1px solid var(--card-bg); /* Добавим разделительную линию */
     }
 
     a {
-      color: var(--accent);
+      color: var(--link); /* Используем новый цвет для ссылок */
       text-decoration: none;
+      transition: color 0.2s ease-in-out;
     }
 
     a:hover {
       text-decoration: underline;
+      color: var(--accent); /* Изменение цвета при наведении */
+    }
+
+    .contact-info p {
+      margin-bottom: 8px;
+    }
+
+    .contact-info a {
+      display: inline-block;
+      margin-right: 15px;
     }
   </style>
 </head>
@@ -114,12 +139,13 @@
 
 <header>
   <h1>SG STUDIO</h1>
-  <p>Привет! Я Лёха, мне 16. Я разработчик из Казахстана и основатель SG STUDIO.</p>
+  <p>Приветствую! Я Лёха, 16-летний разработчик из Казахстана, основатель SG STUDIO.</p>
 </header>
 
 <section class="card">
   <h2>Обо мне</h2>
-  <p>Я создаю Android-приложения, сайты и игры. Работаю с Kotlin, Sketchware Pro, Unity, Godot, Lua (Love2D) и C#. Также разрабатываю 2D и 3D-игры, социальные приложения и мессенджеры. Мне нравится делать проекты красивыми, полезными и бесплатными для людей.</p>
+  <p>Я увлечен созданием инновационных цифровых продуктов, включая Android-приложения, веб-сайты и захватывающие игры. В моем арсенале такие технологии, как Kotlin, Sketchware Pro для Android-разработки, мощные игровые движки Unity и Godot, а также гибкий язык Lua в связке с Love2D для 2D-проектов и C#.</p>
+  <p>Мой фокус направлен на разработку эстетически привлекательных, функциональных и, что немаловажно, бесплатных решений для пользователей. Будь то разработка многомерных 2D и 3D игровых миров, создание удобных социальных сетей или разработка интуитивно понятных мессенджеров, я стремлюсь к совершенству в каждом проекте.</p>
 </section>
 
 <section class="card">
@@ -128,30 +154,34 @@
     <div class="project">
       <img src="https://ofox.kz/assets/icon.png" alt="Ofox Messenger logo">
       <h3>Ofox Messenger</h3>
-      <p>Удобный, бесплатный и кастомизируемый мессенджер.</p>
+      <p>Кроссплатформенный мессенджер, ориентированный на удобство, приватность и широкие возможности кастомизации.</p>
       <a href="https://github.com/SG-STD/OfoxMessenger" target="_blank">GitHub проекта</a>
     </div>
     <div class="project">
       <img src="https://cdn-icons-png.flaticon.com/512/3050/3050525.png" alt="G City logo">
       <h3>G City</h3>
-      <p>2D GTA-игра с видом сверху на движке Godot 4 и 3D-версия на Unity.</p>
+      <p>Динамичная 2D GTA-подобная игра с видом сверху, разработанная на интуитивно понятном конструкторе CCode, а также амбициозная 3D-версия на базе Unity.</p>
     </div>
     <div class="project">
       <img src="https://cdn-icons-png.flaticon.com/512/3502/3502458.png" alt="SG STUDIO logo">
       <h3>SG STUDIO</h3>
-      <p>Моя студия, объединяющая все мои проекты: мессенджеры, сайты, игры и эксперименты с ИИ.</p>
+      <p>Моя персональная студия, объединяющая все мои творческие начинания: от разработки мессенджеров и веб-сайтов до создания игр и экспериментов в области искусственного интеллекта.</p>
     </div>
   </div>
 </section>
 
 <section class="card">
   <h2>Контакты</h2>
-  <p>GitHub: <a href="https://github.com/SG-STD" target="_blank">SG-STD</a></p>
-  <p>Почта: <em>добавь при желании</em></p>
+  <div class="contact-info">
+    <p>GitHub: <a href="https://github.com/SG-STD" target="_blank">SG-STD</a></p>
+    <p>Telegram: <a href="https://t.me/ваш_telegram_логин" target="_blank">Ваш Telegram</a></p>
+    <p>Telegram-канал: <a href="https://t.me/ваш_telegram_канал" target="_blank">Ваш Telegram-канал</a></p>
+    <p>Почта: <em>добавь при желании</em></p>
+  </div>
 </section>
 
 <footer>
-  © 2025 SG STUDIO — Сделано с любовью и кодом
+  © 2025 SG STUDIO — Сделано с увлечением и кодом
 </footer>
 
 </body>

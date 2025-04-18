@@ -2,31 +2,157 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>SG STUDIO</title>
+  <title>SG STUDIO — Портфолио</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      font-family: sans-serif;
-      background: linear-gradient(to bottom right, #222, #444);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+    :root {
+      --main-bg: #0f0f0f;
+      --card-bg: #1b1b1b;
+      --accent: #7f5af0;
+      --text: #e4e4e4;
+      --muted: #aaa;
+    }
+
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    h1 {
-      font-size: 3em;
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--main-bg);
+      color: var(--text);
+      line-height: 1.6;
     }
-    p {
-      font-size: 1.2em;
-      max-width: 500px;
+
+    header {
       text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      color: var(--accent);
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: var(--muted);
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card h2 {
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .project img {
+      max-width: 100px;
+      margin-bottom: 10px;
+    }
+
+    .project h3 {
+      margin: 10px 0 5px;
+      color: var(--accent);
+    }
+
+    .project p {
+      font-size: 0.95em;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px 20px;
+      font-size: 0.9em;
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
+<header>
   <h1>SG STUDIO</h1>
-  <p>Добро пожаловать в моё портфолио. Я создаю приложения, игры и сайты.</p>
+  <p>Привет! Я Лёха, мне 16. Я разработчик из Казахстана и основатель SG STUDIO.</p>
+</header>
+
+<section class="card">
+  <h2>Обо мне</h2>
+  <p>Я создаю Android-приложения, сайты и игры. Работаю с Kotlin, Sketchware Pro, Unity, Godot, Lua (Love2D) и C#. Также разрабатываю 2D и 3D-игры, социальные приложения и мессенджеры. Мне нравится делать проекты красивыми, полезными и бесплатными для людей.</p>
+</section>
+
+<section class="card">
+  <h2>Мои проекты</h2>
+  <div class="projects-grid">
+    <div class="project">
+      <img src="https://ofox.kz/assets/icon.png" alt="Ofox Messenger logo">
+      <h3>Ofox Messenger</h3>
+      <p>Удобный, бесплатный и кастомизируемый мессенджер.</p>
+      <a href="https://github.com/SG-STD/OfoxMessenger" target="_blank">GitHub проекта</a>
+    </div>
+    <div class="project">
+      <img src="https://cdn-icons-png.flaticon.com/512/3050/3050525.png" alt="G City logo">
+      <h3>G City</h3>
+      <p>2D GTA-игра с видом сверху на движке Godot 4 и 3D-версия на Unity.</p>
+    </div>
+    <div class="project">
+      <img src="https://cdn-icons-png.flaticon.com/512/3502/3502458.png" alt="SG STUDIO logo">
+      <h3>SG STUDIO</h3>
+      <p>Моя студия, объединяющая все мои проекты: мессенджеры, сайты, игры и эксперименты с ИИ.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Контакты</h2>
+  <p>GitHub: <a href="https://github.com/SG-STD" target="_blank">SG-STD</a></p>
+  <p>Почта: <em>добавь при желании</em></p>
+</section>
+
+<footer>
+  © 2025 SG STUDIO — Сделано с любовью и кодом
+</footer>
+
 </body>
 </html>
